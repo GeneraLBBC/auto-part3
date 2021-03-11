@@ -1,0 +1,122 @@
+@import "inc/_var.styl"
+@import "inc/_mixins.styl"
+
+body, html
+  background-color: $light.bg_color
+  margin: 0
+  padding: 0
+  font-size: 16px
+  font-family: $font_sf_regular
+h1,h2,h3,h4,h5,h6
+  font-weight: normal
+  margin: 0
+  font-family: $font_sf_semibold
+p
+  margin: 0
+*
+  outline: none !important
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+a
+  text-decoration: none
+  color: $light.link_color
+  &.disabled
+    pointer-events: none
+    opacity: 0.6
+
+.el
+  &-main
+    padding: $p2
+  &-header
+    __flex(0, 0, 0, center)
+  &-button
+    outline: none !important
+    border: none
+    height: $btn_height
+    border-radius: $border_radius !important
+    text-decoration: none !important
+    padding: 0 16px !important
+    display: inline-flex
+    align-items: center
+    opacity: 1
+    & + &, & + span:not([class])
+      margin-left: $p
+    &.is-circle
+      padding: 0 12px !important
+      width: $btn_height
+      border-radius: 50% !important
+      justify-content: center
+    .btn-content, .icon
+      font-size: 18px
+    .icon--left + .btn-content, .btn-content + .icon--right
+      margin-left: 10px
+    &:active
+      opacity: 0.8
+    &--small
+      height: $btn_height_small
+      border-radius: $border_radius !important
+      &.is-circle
+        width: ($btn_height_small - 6px)
+        height: ($btn_height_small - 6px)
+        i
+          font-size: 14px
+    &--mini
+      height: ($btn_height_small - 12)
+      border-radius: $border_radius_secondary !important
+    &--default, &--text
+      background-color: $light.btn !important
+      color: $light.btn_color !important
+    &--primary
+      background-color: $light.red !important
+      color: $light.text_light_color !important
+  &-table
+    td, th
+      padding: 8px 0
+  &-form
+    &-item
+      margin-bottom: $input_bottom !important
+      .el-select, .el-date-editor.el-input, .el-date-editor.el-input__inner
+        width: 100%
+    &--label-top .el-form-item__label
+      line-height: 14px
+      padding: 0 0 6px
+    .form-actions
+      __flex(0,0,flex-start,center)
+  &-input__inner
+    height: $input_height !important
+    line-height: @height
+  &-tag
+    background-color: $light.red
+    border-color: $light.red
+    color: $light.text_light_color
+    &.tag-active
+      background-color: mediumseagreen
+      border-color: mediumseagreen
+  &-message-box, &-popover
+    border-radius: $border_radius
+    border: none !important
+  &-popover
+    &.table-filter
+      padding: $p2
+  &-popconfirm
+    &__main
+      justify-content: center
+    &__action
+      text-align: center
+      margin-top: 12px
+  &-pagination
+    &.is-background .btn-next,
+    &.is-background .btn-prev,
+    &.is-background .el-pager li
+      border-radius: $border_radius
+    &.is-background .el-pager li:not(.disabled).active
+      background-color: $light.red
+      color: $light.bg_color !important
+    &.is-background .el-pager li:not(.disabled):hover
+      color: $light.red
+  &-pager li
+    font-size: 14px
+    height: 30px
+    line-height: @height

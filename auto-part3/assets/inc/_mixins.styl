@@ -1,0 +1,23 @@
+support_blur(bg_color = rgba(0, 0, 0, 0.28), blur = 10px) {
+  @supports ((-webkit-backdrop-filter: blur(blur)) or (backdrop-filter: blur(blur))) {
+    &{
+      -webkit-backdrop-filter: blur(blur)
+      backdrop-filter: blur(blur)
+      background-color: bg_color !important
+    }
+  }
+}
+
+__flex(d = flex, fd = row, jc = flex-start, ai = flex-start){
+  display: noEmpty(d, flex)
+  flex-direction: noEmpty(fd, row)
+  justify-content: noEmpty(jc, flex-start)
+  align-items: noEmpty(ai, flex-start)
+}
+
+
+noEmpty(a, b)
+  if a == 0
+    b
+  else
+    a

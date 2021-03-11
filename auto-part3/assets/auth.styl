@@ -1,0 +1,46 @@
+@import "inc/_fonts.styl"
+@import "inc/_mixins.styl"
+@import "app_update.styl"
+@import "theme/_light.styl"
+
+.auth
+  background-color: #f5f5f5 !important
+  &-layout
+    height: 100vh
+    width: 100%
+    display: flex
+    padding: 0 !important
+    .el-row
+      width: 100%
+      display: flex
+  &-content
+    background-image: url("/stock.jpg") !important
+    background-position: center center !important
+    background-repeat: no-repeat !important
+    background-size: 90% 75% !important
+  &-login
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  &-card
+    width: 80%
+    height: 100%
+    __flex(0, column,center,center)
+    border: none !important
+    background-color: $light.bg_color
+    box-shadow: 0 0 $p3 rgba(0 0 0 0.1)
+    padding: $p3
+    h2
+      font-size: 24px
+      margin-bottom: $p2
+    .el-form
+      width: 100%
+      &-item
+        margin-bottom: $p2
+    .actions
+      width: 100%
+      margin-top: ($p2 - $p)
+      __flex(0, column)
+      .btn
+        width: 100%
+        justify-content: center
